@@ -57,4 +57,4 @@ class QdrantSearcher(BaseSearcher):
             limit=top,
             search_params=rest.SearchParams(**cls.search_params.get("config", {})),
         )
-        return [(hit.id, hit.score) for hit in res]
+        return [(int(hit.id), hit.score) for hit in res]

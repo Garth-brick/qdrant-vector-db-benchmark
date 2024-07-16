@@ -49,6 +49,8 @@ class BaseSearcher:
         precision = 1.0
         if query.expected_result:
             ids = set(x[0] for x in search_res)
+            print(f"received: {ids}")
+            print(f"expected: {query.expected_result[:top]}")
             precision = len(ids.intersection(query.expected_result[:top])) / top
 
         return precision, end - start

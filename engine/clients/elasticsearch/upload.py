@@ -1,5 +1,4 @@
 import multiprocessing as mp
-import uuid
 from typing import List
 
 from elasticsearch import Elasticsearch
@@ -31,7 +30,7 @@ class ElasticUploader(BaseUploader):
     def upload_batch(cls, batch: List[Record]):
         operations = []
         for record in batch:
-            vector_id = uuid.UUID(int=record.id).hex
+            vector_id = record.id
             operations.append({"index": {"_id": vector_id}})
             operations.append({"vector": record.vector, **(record.metadata or {})})
 

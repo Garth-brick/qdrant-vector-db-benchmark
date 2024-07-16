@@ -1,5 +1,4 @@
 import multiprocessing as mp
-import uuid
 from typing import List, Tuple
 
 from elasticsearch import Elasticsearch
@@ -48,6 +47,6 @@ class ElasticSearcher(BaseSearcher):
             size=top,
         )
         return [
-            (uuid.UUID(hex=hit["_id"]).int, hit["_score"])
+            (int(hit["_id"]), hit["_score"])
             for hit in res["hits"]["hits"]
         ]

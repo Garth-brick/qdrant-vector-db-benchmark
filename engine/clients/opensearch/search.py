@@ -77,8 +77,7 @@ class OpenSearchSearcher(BaseSearcher):
             },
         )
         return [
-            (uuid.UUID(hex=hit["_id"]).int, hit["_score"])
-            for hit in res["hits"]["hits"]
+            (int(hit["_id"]), hit["_score"]) for hit in res["hits"]["hits"]
         ]
 
     @classmethod

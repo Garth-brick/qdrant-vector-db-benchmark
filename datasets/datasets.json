@@ -342,5 +342,29 @@
     "type": "tar",
     "link": "https://storage.googleapis.com/ann-filtered-benchmark/datasets/random_keywords_1m_vocab_10_no_filters.tgz",
     "path": "random-100-match-kw-small-vocab/random_keywords_1m_vocab_10_no_filters"
+  },
+  {
+    "name": "devrev-combined-dataset",
+    "vector_size": 768,
+    "distance": "cosine",
+    "type": "tar",
+    "path": "apache_Bug",
+    "link": "file:///home/coder/benchmarking/qdrant-vector-db-benchmark/datasets/apache_Bug/apache_Bug.tar",
+    "schema": {
+      "issuetype_name": "keyword",
+      "repo_name": "keyword"
+    }
+  },
+  {
+    "name": "devrev-combined-shuffled-dataset",
+    "vector_size": 768,
+    "distance": "cosine",
+    "type": "tar",
+    "path": "apache_Bug_shuffled",
+    "link": "file:///home/coder/benchmarking/qdrant-vector-db-benchmark/datasets/apache_Bug/apache_Bug_shuffled.tar",
+    "schema": {
+      "issuetype_name": "keyword",
+      "repo_name": "keyword"
+    }
   }
 ]
